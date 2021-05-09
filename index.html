@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+
+<head>
+  <title>jQuery_projet_02_exercice_06</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-fluid bg-primary row justify-content-center p-3">
+    <h1 class="col-12 p-4 text-center">jQuery_projet_02 Exercice_06</h1>
+    <h2 class="col-9 p-4 text-center">Au passage de la souris sur un bouton de couleur, colorer le texte. Le texte doit redevenir noir quand la souris quitte le bouton.</h2>
+    <div class="offset-1 col-10 row justify-content-center">
+      <div class="row bg-warning rounded p-2 m-2">
+        <div class="row col-12 justify-content-around">
+          <div class="color green rounded p-3" id="green"></div>
+          <div class="color red rounded p-3" id="red"></div>
+          <div class="color blue rounded p-3" id="blue"></div>
+        </div>
+        <div id="texte" class=" rounded p-3">
+          <p class="bg-light rounded p-2 m-2 text-justify">Tara, originellement nommée Antarctica puis Seamaster, est une goélette française destinée à la fois à l'exploration et à la défense de l'environnement. Dans le cadre de l'Année polaire
+            internationale, en 2007-2008, ce voilier est
+            utilisé en Arctique par l'expédition Tara Arctic dans le but de faire des relevés permettant de mieux comprendre les changements climatiques qui s'opèrent en Arctique. En 2009, dans le cadre de l'expédition Tara Oceans, Tara parcourt les
+            mers et les océans dans une circumnavigation de trois ans afin d'étudier le piégeage des molécules de gaz carbonique (CO2) par les micro-organismes marins comme le plancton. En avril 2016, une nouvelle expédition est montée Tara Pacific
+            dont l'objectif est de comprendre le corail, menacé par des facteurs humains et climatiques1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.js">
+  </script>
+  <script>
+  // $(document).ready(function() {
+  //   //La méthode click() permet de gérer l'événement avec un click du bouton dont l'ID de sa div est '#green'
+  //   $('#green').click(function() {
+  //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+  //     $('#texte').css('color', 'green');
+  //   });
+  //   $('#red').click(function() {
+  //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+  //     $('#texte').css('color', 'red');
+  //   });
+  //   $('#blue').click(function() {
+  //     // on applique ici la méthode .addClass() pour ajouter la class green du css au click
+  //     $('#texte').css('color','blue');
+  //   });
+  // });
+  // ********************* Correction Louiza *********************
+  $(document).ready(function(){
+    $('#red, #blue, #green').mouseenter(function (){
+      var setTextColor = $(this).attr('id');
+      $('#texte').css('color', setTextColor);
+    });
+    $('#red, #blue, #green').mouseout(function (){
+      var setTextColor = $(this).attr('id');
+      $('#texte').css('color', 'black');
+    });
+  });
+  </script>
+</body>
+
+</html>
